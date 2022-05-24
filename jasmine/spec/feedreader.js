@@ -59,12 +59,10 @@ $(function() {
 		 * loadFeed() is asynchronous so this test will require.
 		 */
 		beforeEach(function(done) {
-			loadFeed(0, function() {
-				done();
-			});
+			loadFeed(0, done);
 		});
 
-		/* Test to ensure there is at least a single feed entry after load */
+		/* Test to ensure there is at least a single entry within the feedafter load */
 		it('have at least one entry', function(done) {
 			expect($('.feed .entry').length).not.toBe(0);
 			done();
