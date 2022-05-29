@@ -44,15 +44,16 @@ $(function() {
 		it('changes visibility when clicked', function() {
 			let menuIcon = $('.menu-icon-link');
 
-			menuIcon.trigger('click');
+			menuIcon.click();
 			expect($('body').hasClass('menu-hidden')).toBe(false);
-			menuIcon.trigger('click');
+			menuIcon.clcik();
 			expect($('body').hasClass('menu-hidden')).toBe(true);
 		})
 	});
 
 	/* "Initial Entries" test */
 	describe('Initial Entries', function() {
+
 		/* Test that ensures when the loadFeed
 		 * function is called and completes its work, there is at least
 		 * a single .entry element within the .feed container.
@@ -63,9 +64,8 @@ $(function() {
 		});
 
 		/* Test to ensure there is at least a single entry within the feedafter load */
-		it('have at least one entry', function(done) {
-			expect($('.feed .entry').length).not.toBe(0);
-			done();
+		it('have at least one entry', function() {
+			expect($('.feed .entry').length).toBeGreaterThan(0);
 		});
 	});
 
@@ -80,16 +80,15 @@ $(function() {
 			loadFeed(1, function() {
 				firstFeed = $('.feed').html();
 				loadFeed(2, function() {
-					done();
 					secondFeed = $('.feed').html();
+					done();
 				});
 			});
 		});
 
 		/* Test to ensure there is a difference between the first and second feed*/
-		it('changes content when a new feed is loaded', function(done) {
+		it('changes content when a new feed is loaded', function() {
 			expect(firstFeed).not.toBe(secondFeed);
-			done();
 		});
 
 	});

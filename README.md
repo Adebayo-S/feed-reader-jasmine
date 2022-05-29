@@ -22,3 +22,9 @@ JavaScript feed reader testing project using jasmine.
 ### New Feed Selection
 
 - Test to ensure there is a difference between the first and second feed
+
+## How to run
+
+- clone or download the repository: `https://github.com/Adebayo-S/feed-reader-jasmine.git`
+
+- The test file `feedreader.js` can be found in `\jasmine\spec`
